@@ -11,11 +11,14 @@ using std::string;
 int charCount(const char *fileAbsolutePath)
 {
 	if (fileAbsolutePath == NULL)
-		return -1;
+	{
+		cerr << "The file path is empty\n";
+		return 0;
+	}
 	std::ifstream read(fileAbsolutePath);
 	if (!read.is_open())
 	{
-		cerr << "Can't open file: " << fileAbsolutePath << ',\n';
+		cerr << "Can't open file: " << fileAbsolutePath << '\n';
 		return 0;
 	}
 	size_t counter = 0;
@@ -36,7 +39,10 @@ inline bool isWordChar(char ch)
 int wordCount(const char *fileAbsolutePath)
 {
 	if (fileAbsolutePath == NULL)
-		return -1;
+	{
+		cerr << "The file path is empty\n";
+		return 0;
+	}
 	std::ifstream read(fileAbsolutePath);
 	if (!read.is_open())
 	{
@@ -72,7 +78,10 @@ int wordCount(const char *fileAbsolutePath)
 int lineCount(const char *fileAbsolutePath)
 {
 	if (fileAbsolutePath == NULL)
-		return -1;
+	{
+		cerr << "The file path is empty\n";
+		return 0;
+	}
 	std::ifstream read(fileAbsolutePath);
 	if (!read.is_open())
 	{
